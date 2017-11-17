@@ -31,17 +31,17 @@
         //followed by the letter Z
         var apiKey = "&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H";
 
-        // var test = queryUrl + yMd + "T" + timeNow + "Z" + apiKey; // + "&endDateTime=2017-12-15T23:59:00Z";
-        // console.log("test", test);
 
         var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + endTime + futureYmD + "T" + timeThen + "Z" + apiKey;
         console.log(fullApiKey)
 
-        // var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + endTime + "Z" + apiKey;
-
-        // var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + futureYmD + "T" + timeThen + "Z" + apiKey;
-        // console.log(fullApiKey);
-
+        //I would like to make the above code an object but I'm super happy the api key works as intended.
+        //It pulls the now time through 3 days late and puts it in the the api key.
+        //the fix was breaking down the concantenation and I figured out that what was missing was the
+        //& and = signs that I put on the variable endTime.  Life is great.
+        //Next step is to create the click function that will go on the calendar.
+        // I have to decide how the calender will work. An alternative is to make the click function
+        // "listen" to the buttons that will be on the page.
 
 
         $.ajax({
