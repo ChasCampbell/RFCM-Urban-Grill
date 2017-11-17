@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TicketMasterApi Test</title>
+</head>
+
+<body>
+
+    <div class="events"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script type="text/javascript">
+        /*global moment */
+        var queryUrl = "https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=";
+
+        // Full url https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=2017-11-17T11:10:44Z&endDateTime=2017-11-22T23:59:59Z&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H
+
+        // yMD is the paramater that will be entered after startDateTime in the URL
+        var yMd = moment().format("YYYY-MM-DD");
+        //This will be broken up by the letter T
+        var timeNow = moment().format("HH:mm:ss");
+        //This will be followd by the letter Z
+        // console.log(timeNow)
+        var endTime = "&endDateTime=";
+        var futureYmD = moment().add(3, 'days').format('YYYY-MM-DD');
+        // followed by the letter T
+        var timeThen = moment().add(3, 'days').format('HH:mm:ss');
+        //followed by the letter Z
+        var apiKey = "&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H";
+
+        // var test = queryUrl + yMd + "T" + timeNow + "Z" + apiKey; // + "&endDateTime=2017-12-15T23:59:00Z";
+        // console.log("test", test);
+
+        var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + endTime + futureYmD + "T" + timeThen + "Z" + apiKey;
+        console.log(fullApiKey)
+
+        // var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + endTime + "Z" + apiKey;
+
+        // var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + futureYmD + "T" + timeThen + "Z" + apiKey;
+        // console.log(fullApiKey);
+
+
+
+        $.ajax({
+            //crossDomain: true,
+            type: "GET",
+            url: fullApiKey,
+            //url: "https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=2017-12-09T14:00:00Z&endDateTime=2017-12-15T23:59:00Z&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H",
+            async: true,
+            dataType: "json",
+            //cocontentType: "application/x-www-form-urlencoded; charset=utf-8",  was added to make sure that
+            // ticketmaster was reading the characters like colon : as a character and not percent% or something random.
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            success: function(json) {
+                console.log("logging json");
+                console.log(json);
+                var evts = json._embedded.events;
+                for (i = 0; i < evts.length; i++) {
+                    console.log(evts[i])
+                }
+                // Parse the response.
+                // Do other things.
+            },
+            error: function(xhr, status, err) {
+                console.log(xhr);
+                // This time, we do not end up here!
+            }
+        })
+
+
+        // .done(function(response) {
+        //     console.log("logging response");
+        //     console.log(response);
+        // var newEvents = response.
+        // })
+    </script>
+</body>
+
+</html>
