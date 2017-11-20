@@ -1,0 +1,251 @@
+/*Style for ingredient lookup.*/
+
+.panel {
+    border: none;
+}
+
+.panel-heading {
+    background-color: #337ab7;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.panel-title {
+    font-size: 36px;
+    color: white;
+}
+
+#requestIn {
+    max-width: 300px;
+}
+
+/*Style for save an ingredient*/
+
+h6 {
+    font-size: 14px;
+}
+
+#ingredientIn {
+    max-width: 300px;
+}
+
+#qtyLine {
+    float: left;
+    margin-right: 5px;
+    padding-top: 10px;
+
+}
+
+#qtyIn {
+    max-width: 80px;
+    float: left;
+}
+
+#unitsLine {
+    float: left;
+    margin-right: 5px;
+    margin-left: 18px;
+    padding-top: 10px;
+}
+
+#unitsIn {
+    max-width: 100px;
+}
+
+#caloriesLine {
+    float: left;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#caloriesIn {
+    max-width: 80px;
+}
+
+/*Style for lookup from database.*/
+
+#lIQ {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lIU {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lIC {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lMC {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#ingredientLookup {
+    max-width: 300px;
+}
+
+#menuLookup {
+    max-width: 300px;
+}
+
+#menuLookupLine {
+    clear: left;
+}
+
+/*Style for create a plate*/
+
+#itemIn {
+    max-width: 300px;
+}
+
+/*Main course style.*/
+
+#mainIn {
+    max-width: 300px;
+}
+
+#mainQtyLine {
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+#mainQtyIn {
+    max-width: 80px;
+    float: left;
+}
+
+#mainUnitsLine {
+    float: left;
+    margin-right: 5px;
+    margin-left: 18px;
+
+}
+
+#mainUnitsIn {
+    max-width: 100px;
+}
+
+/*Side one style.*/
+
+#sideOneLine {
+    clear: both;
+}
+
+#sideOneIn {
+    max-width: 300px;
+}
+
+#qtyOneLine {
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+#qtyOneIn {
+    max-width: 80px;
+    float: left;
+}
+
+#unitsOneLine {
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 18px;
+
+}
+
+#unitsOneIn {
+    max-width: 100px;
+}
+
+/*Side two style.*/
+
+#sideTwoLine {
+    clear: both;
+}
+
+#sideTwoIn {
+    max-width: 300px;
+    clear: both;
+}
+
+#qtyTwoLine {
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+#qtyTwoIn {
+    max-width: 80px;
+    float: left;
+}
+
+#unitsTwoLine {
+    float: left;
+    margin-right: 5px;
+    margin-left: 18px;
+    text-align: center;
+}
+
+#unitsTwoIn {
+    max-width: 100px;
+}
+
+#createButton {
+    clear: both;
+    float: left;
+    margin-right: 15px;
+}
+
+#total {
+    clear: left;
+    display: inline-block;
+    padding-top: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#insert {
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#clearButton2 {
+    float: left;
+    margin-right: 15px;
+    width: 65px;
+}
+
+#saveButton2 {
+    width: 65px;
+}
+
+.foot {
+    color: white;
+    text-align: center;
+}
