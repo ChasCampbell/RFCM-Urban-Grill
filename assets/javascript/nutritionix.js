@@ -287,3 +287,5 @@ $(document).ready(function() {
     }); // End of .on(click).
 
 }); // End of document ready.
+
+/*global $*/
