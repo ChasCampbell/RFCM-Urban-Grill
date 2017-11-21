@@ -1,0 +1,514 @@
+/*!
+ * Start Bootstrap - Business Casual (https://startbootstrap.com/template-overviews/business-casual)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
+ */
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-image: url(https://static.wixstatic.com/media/371db1_259e733769834cc183c0a479a89d1a7a~mv2.jpg/v1/fill/w_564,h_305,al_c,q_85/371db1_259e733769834cc183c0a479a89d1a7a~mv2.webp);
+  background-size: 350px 200px;
+  opacity: 1%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-heading {
+  font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.wrapper {
+  background-color: white;
+  /*background-color: #faf5d9;
+  */
+  color: green;
+  /*height: 10px;*/
+  border-style: double;
+  border-color: green;
+  border-width: 10px;
+  margin-left: 125px;
+  width: 85%;
+  display: inline-table;
+  vertical-align: middle;
+}
+
+#logostyle {
+  width: 550px;
+  height: 150px;
+  margin-top: -50px;
+}
+
+.tagline-upper {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+/*.tagline-lower {*/
+
+/*  font-size: 1.2rem;*/
+
+/*  line-height: 1;*/
+
+/*}*/
+
+.text-expanded {
+  letter-spacing: 2px;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+hr.divider {
+  border-color: #292b2c;
+  max-width: 250px;
+}
+
+.map-container iframe {
+  pointer-events: none;
+}
+
+.map-container iframe.clicked {
+  pointer-events: auto;
+}
+
+#map {
+  height: 400px;
+  width: 400px;
+}
+
+#navbackgroundstyle {
+  /*margin-top: px;*/
+  /*background-color: #fff7dc;*/
+  background-color: white;
+  /*height: 150px;*/
+}
+
+#containertwostyle {
+  background-image: url(https://static.wixstatic.com/media/371db1_259e733769834cc183c0a479a89d1a7a~mv2.jpg/v1/fill/w_564,h_305,al_c,q_85/371db1_259e733769834cc183c0a479a89d1a7a~mv2.webp);
+}
+
+#boxonestyle {}
+
+
+
+#navbarResponsivestyle {
+  background-color: transparent;
+  text-align: center;
+}
+
+#containerTopstyle {
+  margin: 0px;
+  background-color:
+}
+
+p {
+  text-align: center;
+}
+
+#contactboxstyle {
+  background-color: #ebebeb;
+}
+
+#infoboxstyle {
+  text-align: center;
+}
+
+#ContainerStyleContact {
+  text-align: center;
+  opacity: 1;
+  background-color: #D9383
+  /*background-color: #FBC85F;*/
+  /*background-color: #9A2A1F;*/
+  /*background-color: #8E1B1C;*/
+}
+
+#textstyle {
+  color: #172A40;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  border-style: double;
+  border-color: green;
+  border-width: 2px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#starterone {
+  width: 125px;
+  height: 95px;
+}
+
+/*.UrbanGrill {
+  */
+
+/*  font-family: helvetica;*/
+
+/*  font-weight: bold;*/
+
+/*  font-size: 50px;*/
+
+/*  color: blue;*/
+
+/*  text-align: center;*/
+
+/*}*/
+
+view port @media screen and (max-width: 320px) {
+
+  body {
+    width: 100%;
+  }
+
+  p {
+    width: 100%
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-heading {
+    width: 100%
+  }
+
+  h1 {
+    width: 100%
+  }
+
+  .tagline-upper {
+    width: 100%
+  }
+
+  .tagline-lower {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-shadow {
+    width: 100%
+  }
+
+  .text-lg {
+    width: 100%
+  }
+
+  .bg-faded {
+    width: 100%
+  }
+
+  .bg-overlay {
+    width: 100%
+  }
+
+  hr.divider {
+    width: 100%
+  }
+
+  .map-container iframe {
+    width: 100%
+  }
+
+  .map-container iframe.clicked {
+    width: 100%
+  }
+
+  #navbackgroundstyle {
+    width: 100%
+  }
+
+  #containertwostyle {
+    width: 100%
+  }
+
+  #boxonestyle {
+    width: 100%
+  }
+
+  #logostyle {
+    width: 100%
+  }
+
+  #navbarResponsivestyle {
+    width: 100%
+  }
+
+  #containerTopstyle {
+    width: 100%
+  }
+
+  #contactboxstyle {
+    width: 100%
+  }
+
+  #infoboxstyle {
+    width: 100%
+  }
+
+  #ContainerStyleContact {
+    width: 100%
+  }
+
+  #textstyle {
+    width: 100%
+  }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+  body {
+    width: 100%;
+  }
+
+  p {
+    width: 100%
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-heading {
+    width: 100%
+  }
+
+  h1 {
+    width: 100%
+  }
+
+  .tagline-upper {
+    width: 100%
+  }
+
+  .tagline-lower {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-shadow {
+    width: 100%
+  }
+
+  .text-lg {
+    width: 100%
+  }
+
+  .bg-faded {
+    width: 100%
+  }
+
+  .bg-overlay {
+    width: 100%
+  }
+
+  hr.divider {
+    width: 100%
+  }
+
+  .map-container iframe {
+    width: 100%
+  }
+
+  .map-container iframe.clicked {
+    width: 100%
+  }
+
+  #navbackgroundstyle {
+    width: 100%
+  }
+
+  #containertwostyle {
+    width: 100%
+  }
+
+  #boxonestyle {
+    width: 100%
+  }
+
+  /* #logostyle { 
+    width: 100%
+  }
+  */
+  #navbarResponsivestyle {
+    width: 100%
+  }
+
+  #containerTopstyle {
+    width: 100%
+  }
+
+  #contactboxstyle {
+    width: 100%
+  }
+
+  #infoboxstyle {
+    width: 100%
+  }
+
+  #ContainerStyleContact {
+    width: 100%
+  }
+
+  #textstyle {
+    width: 100%
+  }
+
+}
+
+@media screen and (max-width: 720px) {
+
+  body {
+    width: 100%;
+  }
+
+  p {
+    width: 100%
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .text-heading {
+    width: 100%
+  }
+
+  h1 {
+    width: 100%
+  }
+
+  .tagline-upper {
+    width: 100%
+  }
+
+  .tagline-lower {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-expanded {
+    width: 100%
+  }
+
+  .text-shadow {
+    width: 100%
+  }
+
+  .text-lg {
+    width: 100%
+  }
+
+  .bg-faded {
+    width: 100%
+  }
+
+  .bg-overlay {
+    width: 100%
+  }
+
+  hr.divider {
+    width: 100%
+  }
+
+  .map-container iframe {
+    width: 100%
+  }
+
+  .map-container iframe.clicked {
+    width: 100%
+  }
+
+  #navbackgroundstyle {
+    width: 100%
+  }
+
+  #containertwostyle {
+    width: 100%
+  }
+
+  #boxonestyle {
+    width: 100%
+  }
+
+  #logostyle {
+    width: 100%
+  }
+
+  #navbarResponsivestyle {
+    width: 100%
+  }
+
+  #containerTopstyle {
+    width: 100%
+  }
+
+  #contactboxstyle {
+    width: 100%
+  }
+
+  #infoboxstyle {
+    width: 100%
+  }
+
+  #ContainerStyleContact {
+    width: 100%
+  }
+
+  #textstyle {
+    width: 100%
+  }
+
+}
