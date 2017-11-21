@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TicketMasterApi Test</title>
+</head>
+
+<body>
+
+    <div class="events-table">
+        Here are some events that are happening that can make your plans even more memorable!
+        <ul>
+
+
+        </ul>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script type="text/javascript">
+        /*global moment */
+        var queryUrl = "https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=";
+
+        // Full url https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=2017-11-17T11:10:44Z&endDateTime=2017-11-22T23:59:59Z&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H
+
+        // yMD is the paramater that will be entered after startDateTime in the URL
+        var yMd = moment().format("YYYY-MM-DD");
+        //This will be broken up by the letter T
+        var timeNow = moment().format("HH:mm:ss");
+        //This will be followd by the letter Z in the concantinated string
+        // console.log(timeNow)
+        var endTime = "&endDateTime=";
+        var futureYmD = moment().add(3, 'days').format('YYYY-MM-DD');
+        // followed by the letter T
+        var timeThen = moment().add(3, 'days').format('HH:mm:ss');
+        //followed by the letter Z
+        var apiKey = "&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H";
+        //long ass string is combined/concantinated and packaged into a nice easy to type variable fullApiKey.
+        var fullApiKey = queryUrl + yMd + "T" + timeNow + "Z" + endTime + futureYmD + "T" + timeThen + "Z" + apiKey;
+        console.log(fullApiKey)
+        // function showEvents() was created so that the info loads as soon as the page loads.
+        function showEvents() {
+            //ajax used to clean my sinks, not to calls JSON and gives me nice easy code clean code to read.
+            $.ajax({
+                //crossDomain: true,
+                type: "GET",
+                url: fullApiKey,
+                //url: "https://app.ticketmaster.com/discovery/v2/events.json?stateCode=NC&city=Charlotte&startDateTime=2017-12-09T14:00:00Z&endDateTime=2017-12-15T23:59:00Z&apikey=EFiXWPVDdZn0nrmHIv2uXTP3lnMO619H",
+                async: true,
+                dataType: "json",
+                //conteType is forcing the the JSON and Ticket Master to communicate using charset=utf-8
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                success: function(json) {
+                    console.log("logging json", json);
+                    // evts is defining the path I have to take in the json call back to get to the info I need.  json - _embedded - events.  I found this by putting the fullApiKey url in the url and "drilled down" to find the relative info.
+                    var evts = json._embedded.events;
+                    for (i = 0; i < evts.length; i++) {
+                        console.log(evts[i])
+                        // the following three varialbes are the fields inside the events object I wanted .name .url and .images.
+                        var eventName = evts[i].name;
+                        var eventUrl = evts[i].url;
+                        var eventImg = evts[i].images;
+                        console.log("eventImg URL", eventImg);
+                        // this for loop was created to go inside of the images array which listed 10 objects that all had images
+                        // Note, I had to use the variable j to replace i because i was already used.  Each time we do a new for loop, a new variable must be used.
+                        for (j = 0; j < eventImg.length; j++) {
+                            console.log("link", imgURL);
+                            // break;
+                            // This if statement is searching the 10 objects that are inside of the image array and the condition is it's looking for a width of 640.
+                            // Once it gets to any image with the condition or specificaly the type of interger (or ints for short) that's 640, "break" will stop the loop.
+                            if (eventImg[j].width === 640) {
+                                var imgURL = eventImg[j].url;
+                                break;
+
+                            }
+
+
+
+
+                        }
+
+                        //This is a long ass string.  The challenge here was knowing where to put "" '' "''" and so on
+
+                        $(".events-table").append("<div>" + "<ul>" + eventName + "<p>" + "<img src = " + imgURL + " >" + "<br>" + "<a href = '" + eventUrl + "'" + ' target="_blank"' + "' >" + eventUrl + "</a>" + "</ul>" + "</div>");
+                    }
+                },
+                error: function(xhr, status, err) {
+                    console.log(xhr);
+                    // This time, we do not end up here!
+                }
+
+            })
+        }
+        //Here is where the actual event is called into action.
+        showEvents()
+    </script>
+</body>
+
+</html>
