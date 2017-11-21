@@ -25,6 +25,7 @@ $(document).ready(function() {
     var savedQty;
     var savedUnits = "";
     var savedCalories;
+    var savedValues = [];
     // Variables for create a plate.
     var menuItem = "";
     var mainCourse = "";
@@ -53,7 +54,13 @@ $(document).ready(function() {
     // Variables for lookup.
     var lookupIngredient = "";
     var lookupMenu = "";
-    // _____________________________________________________REQUEST INPUT_
+    var lookupIngredientQty;
+    var lookupIngredientUnits = "";
+    var lookupIngredientCalories;
+    var lookupMenuCalories;
+    var snapshot = {};
+
+    // _________________________________________________REQUEST INPUT_
     // Provide a listener to take in a request for information
     // on an ingredient of a meal.
     $("#requestButton").on("click", function(event) {
@@ -104,77 +111,63 @@ $(document).ready(function() {
             }); // End of .done.
 
     }); // End of .on(click) requestButton.
-    // ____________________________________________CLEAR INGREDIENT INPUT FORM
+    // ___________________________________CLEAR INGREDIENT INPUT FORM
     //Provide a listener to clear the results information form.
     $("#clearButton").on("click", function(event) {
         event.preventDefault();
         // Clear the form.
         $("#info-table > tbody").empty();
     }); // End of .on(click).
-    // ________________________________________________SAVE AN INGREDIENT
+    // ____________________________________________SAVE AN INGREDIENT
     //Provide a listener to enter an ingrediant to the database.
     $("#saveButton").on("click", function(event) {
-        console.log("Hi");
         event.preventDefault();
         savedIngredient = $("#ingredientIn").val().trim();
         savedQty = $("#qtyIn").val().trim();
         savedUnits = $("#unitsIn").val().trim();
         savedCalories = $("#caloriesIn").val().trim();
-        console.log(savedQty);
+        savedValues = [savedIngredient, savedQty, savedUnits, savedCalories];
         // Clear the form.
         $("#ingredientIn").val("");
         $("#qtyIn").val("");
         $("#unitsIn").val("");
-        $("caloriesIn").val();
+        $("#caloriesIn").val("");
 
-        // Save the data in a variable for sending to the database.
-        // var ingredientSaved = {
-        //     "ingredientName": savedIngredient,
-        //     "quantity": savedQty,
-        //     "units": savedUnits,
-        //     "calories": savedCalories
-        // };
-        var ingredientSaved = {
-            "ingredientName": savedIngredient,
-            "ingredientValues": {
-                "quantity": savedQty,
-                "units": savedUnits,
-                "calories": savedCalories
-            }
-        }; // End of var ingredientSaved.
-        console.log(savedIngredient);
+        var savedObject = {
+            "name": savedIngredient,
+            "quantity": savedQty,
+            "units": savedUnits,
+            "calories": savedCalories
+        }; //End of savedObjewct.
+        console.log(savedObject);
         console.log(savedQty);
         console.log(savedUnits);
         console.log(savedCalories);
         // Upload the saved ingredient to the database
-        database.ref().push(ingredientSaved);
-        console.log(ingredientSaved.ingredientName);
-        console.log(ingredientSaved.quantity);
-        console.log(ingredientSaved.units);
-        console.log(ingredientSaved.calories);
+        database.ref().push(savedObject);
     }); // End of .on(click) for dataButton.
-    // _________________________________________________________LOOKUP BUTTON
+    // ________________________________________________LOOKUP BUTTON
     //Provide a listener for a lookup'
-    $("#lookupButton").on("click", function(event) {
+    $("#LookupButton").on("click", function(event) {
         event.preventDefault();
         // Save values in variables.
-        lookupIngredient = $("#ingredientLookup").val().trim();
-        lookupMenu = $("#menuLookup").val().trim();
+        lookupIngredient = $("#ingredientLookupLine").val().trim();
+        lookupMenu = $("#menuLookupLine").val().trim();
         //Get the related information.
-        database.ref().on("value", function(snapshot) {
+        database.ref().orderByChild('name').equalTo(lookupIngredient).on("value", function(snapshot) {
             console.log(snapshot.val());
-
-        });
-        if (lookupIngredient != null) {
-            // lookupIngredientQty = 
-            // lookupIngredientUnits =
-            // lookup IngredientCalories =
-        }
-        else if (lookupMenu != null) {
-            // lookupMenuCalories =
-        }
+            // if (lookupIngredient != null) {
+            //     lookupIngredientQty = snapshot.ingredientSaved; //ingredientName.quantity;
+            //     //    lookupIngredientUnits = snapshot.ingredientSaved.ingredientName.units;
+            //     //    lookupIngredientCalories = snapshot.ingredientSaved.ingredientName.calories;
+            //     console.log(snapshot.chiid_added);
+            // }
+            // else if (lookupMenu != null) {
+            //     lookupMenuCalories = snapshot.Saved.menuName.calories;
+            // }
+        }); // End of database.ref
     }); // End of .on(click) for lookupButton.
-    // ______________________________________________________CLEAR LOOKUP
+    // ________________________________________________CLEAR LOOKUP_______
     //Provide a listener to clear the lookup form.
     $("#clearButton3").on("click", function(event) {
         event.preventDefault();
@@ -183,7 +176,7 @@ $(document).ready(function() {
         $("#menuLookup").val("");
         // Get the database information.
     }); // End of .on(click) for clear. 
-    //_____________________________________________________ENTER MENU ITEM
+    //________________________________________________ENTER MENU ITEM
     //Provide a listener to enter a menu item to the database.
     $("#createButton").on("click", function(event) {
         event.preventDefault();
@@ -218,26 +211,26 @@ $(document).ready(function() {
         });
         // Check for matching units.
         //Calculate the calories for the itwms.
-        if (mainUnits != dbmainUnits) {
-            alert("Main Units must be " + mainUnits);
-        }
-        else {
-            mainCaloriesOut = dbmainCalories * mainQty / dbmainQty;
-        }
-        if (sideOneUnits != dbsideOneUnits) {
-            alert("Side One Units must be " + sideOneUnits);
-        }
-        else {
-            sideOneCaloriesOut = dbsideOneCalories * sideOneQty / dbsideOneQty;
-        }
-        if (sideTwoUnits != dbsideTwoUnits) {
-            alert("Side Two Units must be " + sideTwoUnits);
-        }
-        else {
-            sideTwoCaloriesOut = dbsideTwoCalories * sideTwoQty / dbsideTwoQty;
-            totalCalories = mainCaloriesOut + sideOneCaloriesOut + sideTwoCaloriesOut;
-            $("#insert").html(totalCalories);
-        }
+        // if (mainUnits != dbmainUnits) {
+        //     //alert("Main Units must be " + mainUnits);
+        // }
+        // else {
+        mainCaloriesOut = dbmainCalories * mainQty / dbmainQty;
+        // }
+        // if (sideOneUnits != dbsideOneUnits) {
+        //     //alert("Side One Units must be " + sideOneUnits);
+        // }
+        // else {
+        sideOneCaloriesOut = dbsideOneCalories * sideOneQty / dbsideOneQty;
+        // }
+        // if (sideTwoUnits != dbsideTwoUnits) {
+        //     //alert("Side Two Units must be " + sideTwoUnits);
+        // }
+        // else {
+        sideTwoCaloriesOut = dbsideTwoCalories * sideTwoQty / dbsideTwoQty;
+        totalCalories = mainCaloriesOut + sideOneCaloriesOut + sideTwoCaloriesOut;
+        $("#insert").html(totalCalories);
+        //    }
         // End of three if-else.
     });
     // End of on(click) create.
@@ -264,7 +257,7 @@ $(document).ready(function() {
     }); // End of .on(click) clear.
 
     // Provide a button to save the data.
-    $("#clearButton2").on("click", function(event) {
+    $("#clearButton3").on("click", function(event) {
         event.preventDefault();
         // Save the data in a variable for sending to the database.
         var savedMenuItem = {
@@ -287,5 +280,3 @@ $(document).ready(function() {
     }); // End of .on(click).
 
 }); // End of document ready.
-
-/*global $*/

@@ -6,12 +6,11 @@
     <title>RCFM Urban Grill</title>
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/nutritionix.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--<script type="text/javascript" src="assets/javascript/ticketmaster.js"></script>-->
-    <script type="text/javascript" src="assets/javascript/nutritionix.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>-->
 </head>
+<!--______________________LOOKUP AN INGREDIENT___________________________-->
 
 <body>
     <div class="container">
@@ -32,7 +31,7 @@
                         </form>
                     </div>
                     <!--End of panel body.-->
-
+                    <!--_____________________________________________CREATE A PLATE_____________--->
                     <div class="panel-body">
                         <h3>Create a Plate!</h3>
                         <h6>Enter information to complete a menu item.</h6>
@@ -93,13 +92,11 @@
                         </form>
                     </div>
                     <!--End of panel-body.-->
-
                 </div>
                 <!--End of panel.-->
-
             </div>
             <!--End of column on left.-->
-
+            <!--___________________________________LOAD INGREDIENT RESULTS__________________-->
             <div class="col-md-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -128,10 +125,10 @@
                 <div>
                     <button type="submit" class="btn btn-default" id="clearButton">Clear</button>
                 </div>
-
+                <!--________________________________________SAVE AN INGREDIENT____________________-->
                 <div class="panel-body">
                     <h3>Save an Ingredient</h3>
-                    <h6>Enter information from the table above.</h6>
+                    <h6>Enter information from the table above (no capital letters).</h6>
                     <form>
                         <div class="form-group">
                             <label for="ingredientIn" id="ingredientLine">Ingredient Name</label>
@@ -153,38 +150,36 @@
                     </form>
                 </div>
                 <!--End of panel-body.-->
-
+                <!--___________________________________________LOOKUP_______________________________--->
                 <div class="panel-body">
                     <h3>Look Up an Ingredient or Menu Item</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="ingredientLookup" id="ingredientLookupLine">Ingredient Name</label>
-                            <input type="text" class="form-control" id="ingredientLookup">
-                        </div>
-                        <div class="form-group">
-                            <label for="menuLookup" id="menuLookupLine">Menu Item Name</label>
-                            <input type="text" class="form-control" id="menuLookup">
-                        </div>
+                    <!--<form>-->
+                    <div class="form-group">
+                        <label for="ingredientLookup" id="ingredientLookupLine">Ingredient Name (no capital letters)</label>
+                        <input type="text" class="form-control" id="ingredientLookup">
+                    </div>
+                    <div class="form-group">
+                        <label for="menuLookup" id="menuLookupLine">Menu Item Name (no capital letters)</label>
+                        <input type="text" class="form-control" id="menuLookup">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-default" id="LookupButton">Lookup</button>
+                    </div>
+                    <div>
+                        <p id="lIQ">Ingredient - Quantity:<span id="insertlIQ"></span></p>
+                        <p id="lIU">Units:<span id="insertlIU"></span></p>
+                        <p id="lIC">Calories:<span id="insertlIC"></span></p>
+                        <br>
+                        <p id="lMC">Menu Item - Calories:<span id="insertlMC"></span></p>
                         <div>
-                            <button type="submit" class="btn btn-default" id="lookupButton ">Lookup</button>
+                            <button type="submit" class="btn btn-default" id="clearButton3">Clear</button>
                         </div>
-                        <div>
-                            <p id="lIQ">Ingredient - Quantity:<span id="insertlIQ"></span></p>
-                            <p id="lIU">Units:<span id="insertlIU"></span></p>
-                            <p id="lIC">Calories:<span id="insertlIC"></span></p>
-                            <br>
-                            <p id="lMC">Menu Item - Calories:<span id="insertlMC"></span></p>
-                            <div>
-                                <button type="submit" class="btn btn-default" id="clearButton3">Clear</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <!--</form>-->
                 </div>
                 <!--End of panel-body.-->
-
             </div>
             <!--End of column on right.-->
-
         </div>
         <!--End of row.-->
 
@@ -195,16 +190,16 @@
                     <p>Nutrition data from Nutritionix.com</p>
                 </div>
                 <!--End of footer.-->
-
             </div>
             <!--End of column.-->
-
         </div>
         <!--End of row.-->
 
     </div>
     <!--End of container.-->
 
+    <!--<script type="text/javascript" src="assets/javascript/ticketmaster.js"></script>-->
+    <script type="text/javascript" src="assets/javascript/nutritionix.js"></script>
 </body>
 
 </html>
