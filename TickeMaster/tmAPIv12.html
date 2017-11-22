@@ -4,19 +4,92 @@
 <head>
     <meta charset="utf-8">
     <title>TicketMasterApi Test</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.css" rel="stylesheet">
+    <link rel="stylesheet" href="tmAPIv1.css">
 </head>
 
 <body>
 
-    <div class="events-table">
-        Here are some events that are happening that can make your plans even more memorable!
-        <ul>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="tagline-upper text-center text-heading text-shadow text-green mt-5 d-none d-lg-block"><img id="logostyle" src="https://i.pinimg.com/736x/3f/95/84/3f95843973c737f85c802cc6ace3a5af.jpg"></div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
 
-
-        </ul>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-green mb-5 d-none d-lg-block"> | Charlotte, NC 28213 | 704-687-8622 | </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
     </div>
 
+
+    <!-- Navigation -->
+    <nav id="navbackgroundstyle" class="navbar navbar-expand">
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+            <a href = "#home"></a>
+            <a href = "#about"></a>
+            <a href = "#menu"></a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active px-lg-4">
+                    <a id="textstyle" class="nav-link text-uppercase text-expanded" href="index.html">Home
+                <!--<span class="sr-only">(current)</span>-->
+              </a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a id="textstyle" class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a id="textstyle" class="nav-link text-uppercase text-expanded" href="Menu.html">Menu</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a id="textstyle" class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item px-lg-4">
+                    <a id="textstyle" class="nav-link text-uppercase text-expanded" href="tmAPIv8.html">Bonus</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <br>
+    <section class="mainContainer">
+        <div class="container">
+            <div class="events-table">
+                <div id="bonus-time">
+                    <h1>BONUS TIME!</h1>
+                    <h2>Book any ticketmaster event and when you show up with your ticketmaster stub, the first round of drinks is on us.</h2>
+                    <h3>To sweeten the deal even
+                        <bold>more</bold>, you will also get an additional 10% off for being awesome.</h3>
+                    <!--<br><br>-->
+
+                    <ul>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
     <script type="text/javascript">
@@ -82,8 +155,12 @@
                         }
 
                         //This is a long ass string.  The challenge here was knowing where to put "" '' "''" and so on
+                        // $(".events-table").append("<div><ul><h2>" + eventName + "</h2><p><br>" +
+                        //     "<a href = '" + eventUrl + "'  target='_blank' >" + "<img src = " + imgURL + " >" + "</a></ul></div>");
 
-                        $(".events-table").append("<div>" + "<ul>" + eventName + "<p>" + "<img src = " + imgURL + " >" + "<br>" + "<a href = '" + eventUrl + "'" + ' target="_blank"' + "' >" + eventUrl + "</a>" + "</ul>" + "</div>");
+                        $(".events-table").append("<div class='divClass'><ul><h2>" + eventName + "</h2><p><br>" +
+                            "<a href = '" + eventUrl + "'  target='_blank' >" + "<img class='image-size' src = " + imgURL + " >" + "</a></ul></div>");
+
                     }
                 },
                 error: function(xhr, status, err) {
