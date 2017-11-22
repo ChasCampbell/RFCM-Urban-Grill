@@ -31,7 +31,7 @@
                         </form>
                     </div>
                     <!--End of panel body.-->
-                    <!--_____________________________________________CREATE A PLATE_____________--->
+                    <!--_____________________________________________CREATE A PLATE_____________-->
                     <div class="panel-body">
                         <h3>Create a Plate!</h3>
                         <h6>Enter information to complete a menu item.</h6>
@@ -150,32 +150,40 @@
                     </form>
                 </div>
                 <!--End of panel-body.-->
-                <!--___________________________________________LOOKUP_______________________________--->
+                <!--___________________________________________LOOKUP_______________________________-->
                 <div class="panel-body">
                     <h3>Look Up an Ingredient or Menu Item</h3>
-                    <!--<form>-->
-                    <div class="form-group">
-                        <label for="ingredientLookup" id="ingredientLookupLine">Ingredient Name (no capital letters)</label>
-                        <input type="text" class="form-control" id="ingredientLookup">
-                    </div>
-                    <div class="form-group">
-                        <label for="menuLookup" id="menuLookupLine">Menu Item Name (no capital letters)</label>
-                        <input type="text" class="form-control" id="menuLookup">
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-default" id="LookupButton">Lookup</button>
-                    </div>
-                    <div>
-                        <p id="lIQ">Ingredient - Quantity:<span id="insertlIQ"></span></p>
-                        <p id="lIU">Units:<span id="insertlIU"></span></p>
-                        <p id="lIC">Calories:<span id="insertlIC"></span></p>
-                        <br>
-                        <p id="lMC">Menu Item - Calories:<span id="insertlMC"></span></p>
-                        <div>
-                            <button type="submit" class="btn btn-default" id="clearButton3">Clear</button>
+                    <form>
+                        <div class="form-group">
+                            <label for="ingredientLookup" id="ingredientLookupLine">Ingredient Name</label>
+                            <input type="text" class="form-control" id="ingredientLookup">
                         </div>
-                    </div>
-                    <!--</form>-->
+                        <div>
+                            <button type="submit" class="btn btn-default" id="lookupButtonOne">Lookup</button>
+                        </div>
+                        <div>
+                            <p id="lIQ">Ingredient - Quantity: <span id="insertlIQ"></span></p>
+                            <p id="lIU">Units: <span id="insertlIU"></span></p>
+                            <p id="lIC">Calories: <span id="insertlIC"></span></p>
+                            <br>
+                            <br>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <label for="menuLookup" id="menuLookupLine">Menu Item Name</label>
+                                <input type="text" class="form-control" id="menuLookup">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default" id="lookupButton2">Lookup</button>
+                            </div>
+                            <div>
+                                <p id="lMC">Menu Item - Calories:<span id="insertlMC"></span></p>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default" id="clearButton3">Clear Lookup</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <!--End of panel-body.-->
             </div>
@@ -183,10 +191,10 @@
         </div>
         <!--End of row.-->
 
-        <div class="row " id="foot ">
-            <div class="col-md-12 ">
-                <div class="foot ">
-                    <img src="assets/images/attribution_jqfdgy.png " alt="Nutritionix Logo and Link "></img>
+        <div class="row" id="foot">
+            <div class="col-md-12">
+                <div class="foot">
+                    <img src="assets/images/attribution_jqfdgy.png" alt="Nutritionix Logo and Link">
                     <p>Nutrition data from Nutritionix.com</p>
                 </div>
                 <!--End of footer.-->
