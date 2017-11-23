@@ -47,7 +47,7 @@ h1 {
 #logostyle {
   width: 550px;
   height: 150px;
-  margin-top: -50px;
+  margin-top: -47.5px;
 }
 
 .tagline-upper {
@@ -167,20 +167,22 @@ p {
   height: 95px;
 }
 
-/*.UrbanGrill {
-  */
+#chicken {
+  text-align: center;
+  /*color: red;*/
+}
 
-/*  font-family: helvetica;*/
+#entree {
+  margin-bottom: 10px;
+  margin-left: 15px;
+  height: 200px;
+  width: 300px;
+}
 
-/*  font-weight: bold;*/
-
-/*  font-size: 50px;*/
-
-/*  color: blue;*/
-
-/*  text-align: center;*/
-
-/*}*/
+.dinner {
+  text-align: center;
+  /*color: red;*/
+}
 
 view port @media screen and (max-width: 320px) {
 
