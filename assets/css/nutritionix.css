@@ -106,143 +106,261 @@ h6 {
     clear: left;
 }
 
+.menu {
+    clear: left;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.dish {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishq {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishu {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishc {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lookupButton2 {
+    float: left;
+    margin-right: 15px;
+}
+
+#clearButton3 {
+    display: inline-block;
+    margin-top: 15px;
+}
+
 /*Style for create a plate*/
 
 #itemIn {
     max-width: 300px;
 }
 
-/*Main course style.*/
-
 #mainIn {
     max-width: 300px;
 }
 
-#mainQtyLine {
-    float: left;
-    text-align: center;
-    margin-right: 5px;
-    padding-top: 0;
-}
-
-#mainQtyIn {
-    max-width: 80px;
-    float: left;
-}
-
-#mainUnitsLine {
-    float: left;
-    margin-right: 5px;
-    margin-left: 18px;
-
-}
-
-#mainUnitsIn {
-    max-width: 100px;
-}
-
-/*Side one style.*/
-
 #sideOneLine {
-    clear: both;
+    clear: left;
+    float: left;
 }
 
 #sideOneIn {
     max-width: 300px;
+    clear: both;
 }
 
-#qtyOneLine {
+#sideTwoLine {
+    clear: left;
+}
+
+#sideTwoIn {
+    clear: both;
+    max-width: 300px;
+}
+
+.ilb {
+    clear: left;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.quc {
+    clear: left;
+    display: inline-block;
+}
+
+/*Put in the serving quantities.*/
+
+#mainQtyLine {
     float: left;
-    text-align: center;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#mainQtyIn {
+    float: left;
+    width: 50px;
+    height: 25px;
     margin-right: 5px;
     padding-top: 0;
 }
 
-#qtyOneIn {
-    max-width: 80px;
+#qtyOneLine {
+    clear: left;
     float: left;
-}
-
-#unitsOneLine {
-    float: left;
-    text-align: center;
     margin-right: 5px;
-    margin-left: 18px;
-
+    padding-top: 5px;
 }
 
-#unitsOneIn {
-    max-width: 100px;
-}
-
-/*Side two style.*/
-
-#sideTwoLine {
-    clear: both;
-}
-
-#sideTwoIn {
-    max-width: 300px;
-    clear: both;
+#qtyOneIn {
+    float: left;
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+    padding-top: 0;
 }
 
 #qtyTwoLine {
     float: left;
+    clear: left;
     text-align: center;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#qtyTwoIn {
+    float: left;
+    width: 50px;
+    height: 25px;
     margin-right: 5px;
     padding-top: 0;
 }
 
-#qtyTwoIn {
-    max-width: 80px;
-    float: left;
-}
+/*Show the serving calculated calories.*/
 
-#unitsTwoLine {
+.servcal {
     float: left;
+    max-width: 150px;
+    font-size: 14px;
+    font-weight: bold;
     margin-right: 5px;
-    margin-left: 18px;
-    text-align: center;
+    padding-top: 5px;
 }
 
-#unitsTwoIn {
-    max-width: 100px;
+#insertmsc {
+    display: inline-block;
 }
 
-#createButton {
-    clear: both;
-    float: left;
-    margin-right: 15px;
+#inserts1sc {
+    display: inline-block;
 }
 
-#total {
+#inserts2sc {
+    display: inline-block;
+}
+
+.total {
     clear: left;
     display: inline-block;
     padding-top: 7px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     margin-right: 5px;
 }
 
-#insert {
+#setBaseCal {
     display: inline-block;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    padding-left: 3px;
-    padding-right: 3px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 6px;
+}
+
+#previewButton {
+    clear: left;
+    float: left;
+}
+
+.ilb1 {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.totalc {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.totalc {
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#bottomButtons {
+    clear: left;
+    float: left;
+}
+
+.ilb2 {
+    display: inline-block;
+    font-size: 14px;
     font-weight: bold;
 }
 
-#clearButton2 {
-    float: left;
+.ilb3 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.ilb4 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 18px;
+}
+
+#checkitButton {
+    display: inline-block;
+    width: 75px;
     margin-right: 15px;
-    width: 65px;
+    margin-bottom: 15px;
 }
 
 #saveButton2 {
-    width: 65px;
+    clear: left;
+    float: left;
+    width: 75px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+#clearButton2 {
+    clear: left;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 75px;
 }
 
 .foot {
