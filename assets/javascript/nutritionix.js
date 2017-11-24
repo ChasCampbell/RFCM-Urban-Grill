@@ -152,7 +152,7 @@ $(document).ready(function() {
         // Upload the saved ingredient to the database
         database.ref().push(savedObject);
     }); // End of .on(click) for saveButton.
-    // ____________________________________________LOOKUP BUTTONS___________
+    // ____________________________________________LOOKUP INGREDIENT___________
     //Provide a listener to look up an ingredient.
     $("#lookupButtonOne").on("click", function(event) {
         event.preventDefault();
@@ -174,7 +174,7 @@ $(document).ready(function() {
             }); // End of snapshot forEach.
         }); // End of database.ref
     }); // End of .on(click) for lookupButton1 for an ingredient.
-
+    // ____________________________________________LOOKUP MENU ITEM___________
     //Provide a listener to look up a menu item.
     $("#lookupButton2").on("click", function(event) {
         event.preventDefault();
@@ -197,15 +197,15 @@ $(document).ready(function() {
                 dbmainUnits = childData.munits;
                 dbsideOneUnits = childData.s1units;
                 dbsideTwoUnits = childData.s2units;
-                dbmainCal = childData.mcalories;
-                dbsideOneCal = childData.s1cal;
-                console.log(dbsideTwoCal);
-                dbsideTwoCal = childData.s2cal;
-                dbtotalCalories = childData.totalC;
+                dbmainCal = Math.round(childData.mcalories);
+                dbsideOneCal = Math.round(childData.s1cal);
+                dbsideTwoCal = Math.round(childData.s2Cal);
+                dbtotalCalories = Math.round(childData.totalC);
                 // Load into html
                 $(".menu").append("<p id='look1'>Main Course: " + dbmainCourse + " " + dbmainQty + " " + dbmainUnits + " " + dbmainCal + " calories</p>");
                 $(".menu").append("<p id='look2'>Side Course: " + dbsideOne + " " + dbsideOneQty + " " + dbsideOneUnits + " " + dbsideOneCal + " calories</p>");
                 $(".menu").append("<p id='look3'>Side Course: " + dbsideTwo + " " + dbsideTwoQty + " " + dbsideTwoUnits + " " + dbsideTwoCal + " calories</p>");
+                $(".menu").append("<p id='look4'>Total Calories: " + dbtotalCalories + "</p>");
             }); // End of snapshot forEach.
         }); // End of database.ref
     }); // End of .on(click) for lookupButton2.
@@ -215,6 +215,9 @@ $(document).ready(function() {
         event.preventDefault();
         // Clear the form.
         $("#ingredientLookup").val("");
+        $("#insertlIQ").html("");
+        $("#insertlIU").html("");
+        $("#insertlIC").html("");
         $(".menu").empty();
         // Get the database information.
     }); // End of .on(click) for clear. 
@@ -270,18 +273,21 @@ $(document).ready(function() {
                 $("#setBaseCal").html(totalBaseCalories);
             }); // End of snapshot forEach.
         }); // End of database.ref
-    }); // End of on(click) for previewButton.
+    }); // End of on(click) for previewButton.______CHECK EFFECT OF SERVING SIZES____
     // Provide a button to allow examination of the calory results before saving.
     $("#checkitButton").on("click", function(event) {
         event.preventDefault();
-        mainQty = $("#mainQtyIn").val().trim();
-        sideOneQty = $("#qtyOneIn").val().trim();
-        sideTwoQty = $("#qtyTwoIn").val().trim();
+        mainQty = parseFloat($("#mainQtyIn").val().trim());
+        sideOneQty = parseFloat($("#qtyOneIn").val().trim());
+        sideTwoQty = parseFloat($("#qtyTwoIn").val().trim());
         mainServCal = Math.round(mainBaseCal * (mainQty / mainBaseQty));
         s1ServCal = Math.round(sideOneBaseCal * (sideOneQty / sideOneBaseQty));
         s2ServCal = Math.round(sideTwoBaseCal * (sideTwoQty / sideTwoBaseQty));
         totalCalories = mainServCal + s1ServCal + s2ServCal;
         console.log(totalCalories);
+        $("#mainServCal").html(mainServCal);
+        $("#s1ServCal").html(s1ServCal);
+        $("#s2ServCal").html(s2ServCal);
         $(".totalc").html("Total Calories: " + totalCalories);
     }); // End of checkitButton.
     // Save the database values to a variable for upload.
@@ -330,7 +336,9 @@ $(document).ready(function() {
         $("#sets2bq").html("");
         $("#sets2bu").html("");
         $("#sets2bc").html("");
-
+        $("#mainServCal").html("");
+        $("#s1ServCal").html("");
+        $("#s2ServCal").html("");
         $("#setBaseCal").html("");
         $(".totalc").html("Total Calories:");
     }); // End of .on(click) clear.
