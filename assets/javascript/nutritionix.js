@@ -1,4 +1,4 @@
-/*global $ firebase */
+/*global $ firebase childData*/
 $(document).ready(function() {
     // Initialize Firebase
     var config = {
@@ -14,51 +14,62 @@ $(document).ready(function() {
     var database = firebase.database();
     // Variables for ingredient request.
     var ingredient = "";
-    var results = {};
-    var itemCalories = 0;
+    var itemCalories;
     var itemName = "";
     var brandName = "";
-    var servingSizeQty = 1;
+    var servingSizeQty = "";
     var servingSizeUnits = "";
     // Variables for ingredient database input.
     var savedIngredient = "";
-    var savedQty;
+    var savedQty = "";
     var savedUnits = "";
     var savedCalories;
-    var savedValues = [];
     // Variables for create a plate.
     var menuItem = "";
     var mainCourse = "";
-    var mainQty;
-    var mainUnits = "";
+    var mainBaseQty = "";
+    var mainBaseUnits = "";
+    var mainBaseCal;
     var sideOne = "";
-    var sideOneQty;
-    var sideOneUnits = "";
+    var sideOneBaseQty = "";
+    var sideOneBaseUnits = "";
+    var sideOneBaseCal;
     var sideTwo = "";
-    var sideTwoQty;
-    var sideTwoUnits = "";
+    var sideTwoBaseQty = "";
+    var sideTwoBaseUnits = "";
+    var sideTwoBaseCal;
+    var menuObject = {};
     //Variables for calory calculations.
-    var dbmainQty;
-    var dbsideOneQty;
-    var dbsideTwoQty;
-    var dbmainUnits = "";
-    var dbsideOneUnits = "";
-    var dbsideTwoUnits = "";
-    var dbmainCalories;
-    var dbsideOneCalories;
-    var dbsideTwoCalories;
-    var mainCaloriesOut;
-    var sideOneCaloriesOut;
-    var sideTwoCaloriesOut;
-    var totalCalories;
+    var mainQty = "";
+    var sideOneQty = "";
+    var sideTwoQty = "";
+    var totalBaseCalories = 0;
+    var totalCalories = 0;
     // Variables for lookup.
     var lookupIngredient = "";
     var lookupMenu = "";
-    var lookupQty;
+    var lookupQty = "";
     var lookupUnits = "";
     var lookupCalories;
-    var lookupTotalCalories;
     var snapshot = {};
+    var mainServCal;
+    var s1ServCal;
+    var s2ServCal;
+    var dbmenuItem = "";
+    var dbmainCourse = "";
+    var dbmainQty = "";
+    var dbmainUnits = "";
+    var dbmainCal;
+    var dbsideOne = "";
+    var dbsideOneQty = "";
+    var dbsideOneUnits = "";
+    var dbsideOneCal;
+    var dbsideTwo = "";
+    var dbsideTwoQty = "";
+    var dbsideTwoUnits = "";
+    var dbsideTwoCal;
+    var dbtotalCalories;
+    var childData = {};
 
     // _________________________________________________REQUEST INPUT_
     // Provide a listener to take in a request for information
@@ -107,7 +118,6 @@ $(document).ready(function() {
                     $("#info-table > tbody").append("<tr><td>" + itemName + "</td><td>" + brandName + "</td><td>" +
                         itemCalories + "</td><td>" + servingSizeQty + ' ' + servingSizeUnits + "</td></tr>");
                 } // End of for.
-
             }); // End of .done.
 
     }); // End of .on(click) requestButton.
@@ -117,7 +127,7 @@ $(document).ready(function() {
         event.preventDefault();
         // Clear the form.
         $("#info-table > tbody").empty();
-    }); // End of .on(click).
+    }); // End of .on(click) ClearButton.
     // ____________________________________________SAVE AN INGREDIENT
     //Provide a listener to enter an ingrediant to the database.
     $("#saveButton").on("click", function(event) {
@@ -126,7 +136,6 @@ $(document).ready(function() {
         savedQty = $("#qtyIn").val().trim();
         savedUnits = $("#unitsIn").val().trim();
         savedCalories = $("#caloriesIn").val().trim();
-        savedValues = [savedIngredient, savedQty, savedUnits, savedCalories];
         // Clear the form.
         $("#ingredientIn").val("");
         $("#qtyIn").val("");
@@ -172,74 +181,132 @@ $(document).ready(function() {
         // Save value in variable.
         lookupMenu = $("#menuLookup").val().trim();
         //Get the related information.
-        database.ref().orderByChild('itemName').equalTo(lookupMenu).on("value", function(snapshot) {
-            console.log(snapshot.val());
+        database.ref().orderByChild('dinner').equalTo(lookupMenu).on("value", function(snapshot) {
             var savedShot = snapshot.val();
             snapshot.forEach(function(childSnapshot) {
                 console.log(childSnapshot.val());
-                var childData = childSnapshot.val();
+                childData = childSnapshot.val();
                 // Save the data in variables.
-                lookupTotalCalories = childData.totalCalories;
+                dbmenuItem = childData.dinner;
+                dbmainCourse = childData.main;
+                dbsideOne = childData.side1;
+                dbsideTwo = childData.side2;
+                dbmainQty = childData.mquantity;
+                dbsideOneQty = childData.s1quantity;
+                dbsideTwoQty = childData.s2quantity;
+                dbmainUnits = childData.munits;
+                dbsideOneUnits = childData.s1units;
+                dbsideTwoUnits = childData.s2units;
+                dbmainCal = childData.mcalories;
+                dbsideOneCal = childData.s1cal;
+                console.log(dbsideTwoCal);
+                dbsideTwoCal = childData.s2cal;
+                dbtotalCalories = childData.totalC;
+                // Load into html
+                $(".menu").append("<p id='look1'>Main Course: " + dbmainCourse + " " + dbmainQty + " " + dbmainUnits + " " + dbmainCal + " calories</p>");
+                $(".menu").append("<p id='look2'>Side Course: " + dbsideOne + " " + dbsideOneQty + " " + dbsideOneUnits + " " + dbsideOneCal + " calories</p>");
+                $(".menu").append("<p id='look3'>Side Course: " + dbsideTwo + " " + dbsideTwoQty + " " + dbsideTwoUnits + " " + dbsideTwoCal + " calories</p>");
             }); // End of snapshot forEach.
-            // Save the data in variables.
-        });
-    });
+        }); // End of database.ref
+    }); // End of .on(click) for lookupButton2.
     // ____________________________________________CLEAR LOOKUP________________
     //Provide a listener to clear the lookup form.
     $("#clearButton3").on("click", function(event) {
         event.preventDefault();
         // Clear the form.
         $("#ingredientLookup").val("");
-        $("#menuLookup").val("");
+        $(".menu").empty();
         // Get the database information.
     }); // End of .on(click) for clear. 
-    //________________________________________________ENTER MENU ITEM
+    //____________________________________________________Create a Plate_______________
     //Provide a listener to enter a menu item to the database.
-    $("#createButton").on("click", function(event) {
+    $("#previewButton").on("click", function(event) {
         event.preventDefault();
         menuItem = $("#itemIn").val().trim();
         mainCourse = $("#mainIn").val().trim();
-        mainQty = $("#mainQtyIn").val().trim();
-        mainUnits = $("#mainUnitsIn").val().trim();
-
+        //Get the related information.
+        database.ref().orderByChild('name').equalTo(mainCourse).on("value", function(snapshot) {
+            var savedShot = snapshot.val();
+            snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                mainBaseQty = parseFloat(childData.quantity);
+                mainBaseUnits = childData.units;
+                mainBaseCal = parseInt(childData.calories);
+                // Load html with the variables.
+                $("#setmbq").html(mainBaseQty);
+                $("#setmbu").html(mainBaseUnits);
+                $("#setmbc").html(mainBaseCal);
+            }); // End of snapshot forEach.
+        }); // End of database.ref   
         sideOne = $("#sideOneIn").val().trim();
-        sideOneQty = $("#qtyOneIn").val().trim();
-        sideOneUnits = $("#unitsOneIn").val().trim();
-
+        //Get the related information.
+        database.ref().orderByChild('name').equalTo(sideOne).on("value", function(snapshot) {
+            var savedShot = snapshot.val();
+            snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                sideOneBaseQty = parseFloat(childData.quantity);
+                sideOneBaseUnits = childData.units;
+                sideOneBaseCal = parseInt(childData.calories);
+                // Load html with the variables.
+                $("#sets1bq").html(sideOneBaseQty);
+                $("#sets1bu").html(sideOneBaseUnits);
+                $("#sets1bc").html(sideOneBaseCal);
+            }); // End of snapshot forEach.
+        }); // End of database.ref
         sideTwo = $("#sideTwoIn").val().trim();
+        //Get the related information.
+        database.ref().orderByChild('name').equalTo(sideTwo).on("value", function(snapshot) {
+            var savedShot = snapshot.val();
+            snapshot.forEach(function(childSnapshot) {
+                var childData = childSnapshot.val();
+                sideTwoBaseQty = parseFloat(childData.quantity);
+                sideTwoBaseUnits = childData.units;
+                sideTwoBaseCal = parseFloat(childData.calories);
+                // Load html with the variables.
+                $("#sets2bq").html(sideTwoBaseQty);
+                $("#sets2bu").html(sideTwoBaseUnits);
+                $("#sets2bc").html(sideTwoBaseCal);
+                totalBaseCalories = mainBaseCal + sideOneBaseCal + sideTwoBaseCal;
+                $("#setBaseCal").html(totalBaseCalories);
+            }); // End of snapshot forEach.
+        }); // End of database.ref
+    }); // End of on(click) for previewButton.
+    // Provide a button to allow examination of the calory results before saving.
+    $("#checkitButton").on("click", function(event) {
+        event.preventDefault();
+        mainQty = $("#mainQtyIn").val().trim();
+        sideOneQty = $("#qtyOneIn").val().trim();
         sideTwoQty = $("#qtyTwoIn").val().trim();
-        sideTwoUnits = $("#unitsTwoIn").val().trim();
-
-            // Save the database values to a variable for upload.
-            var menuObject = {
-                "dinner": menuItem,
-                "main": mainCourse,
-                "mquantity": mainQty,
-                "munits": mainUnits,
-                "mcalories": mainCalories,
-                "side1": sideOne,
-                "s1quantity": sideOneQty,
-                "s1units":sideOneUnits,
-                "s1calories": sideOneCalories,
-                "side2": sideTwo,
-                "s2quantity": sideTwoQty,
-                "s2units":sideTwoUnits,
-                "s2calories": sideTwoCalories
-            }  // End of var menu Object.
-            console.log(menuObject);
-            
-    });  // End of .on(click) for create button.
-    // Upload menuObject to Firebase.
-            database.ref().push(menuObject);
-        }, function(errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
-        //    sideTwoCaloriesOut = dbsideTwoCalories * sideTwoQty / dbsideTwoQty;
-        //    totalCalories = mainCaloriesOut + sideOneCaloriesOut + sideTwoCaloriesOut;
-        //    $("#insert").html(totalCalories)
-    });
-    // End of on(click) create.
-
+        mainServCal = Math.round(mainBaseCal * (mainQty / mainBaseQty));
+        s1ServCal = Math.round(sideOneBaseCal * (sideOneQty / sideOneBaseQty));
+        s2ServCal = Math.round(sideTwoBaseCal * (sideTwoQty / sideTwoBaseQty));
+        totalCalories = mainServCal + s1ServCal + s2ServCal;
+        console.log(totalCalories);
+        $(".totalc").html("Total Calories: " + totalCalories);
+    }); // End of checkitButton.
+    // Save the database values to a variable for upload.
+    $("#saveButton2").on("click", function(event) {
+        event.preventDefault();
+        var menuObject = {
+            "dinner": menuItem,
+            "main": mainCourse,
+            "mquantity": mainQty,
+            "munits": mainBaseUnits,
+            "mcalories": mainServCal,
+            "side1": sideOne,
+            "s1quantity": sideOneQty,
+            "s1units": sideOneBaseUnits,
+            "s1cal": s1ServCal,
+            "side2": sideTwo,
+            "s2quantity": sideTwoQty,
+            "s2units": sideTwoBaseUnits,
+            "s2Cal": s2ServCal,
+            "totalC": totalCalories
+        }; // End of var menu Object.
+        console.log(menuObject);
+        // Upload menuObject to Firebase.
+        database.ref().push(menuObject);
+    }); // End of .on(click) for save button.
     // Provide a button to clear the form.
     $("#clearButton2").on("click", function(event) {
         event.preventDefault();
@@ -248,71 +315,29 @@ $(document).ready(function() {
         $("#mainIn").val("");
         $("#mainQtyIn").val("");
         $("#mainUnitsIn").val("");
-
+        $("#setmbq").html("");
+        $("#setmbu").html("");
+        $("#setmbc").html("");
         $("#sideOneIn").val("");
         $("#qtyOneIn").val("");
         $("#unitsOneIn").val("");
-
+        $("#sets1bq").html("");
+        $("#sets1bu").html("");
+        $("#sets1bc").html("");
         $("#sideTwoIn").val("");
         $("#qtyTwoIn").val("");
         $("#unitsTwoIn").val("");
+        $("#sets2bq").html("");
+        $("#sets2bu").html("");
+        $("#sets2bc").html("");
 
-        $("#totalCalories").val("");
-        $("#insert").val("total");
+        $("#setBaseCal").html("");
+        $(".totalc").html("Total Calories:");
     }); // End of .on(click) clear.
-
-    // Provide a button to save the data.
-    $("#clearButton3").on("click", function(event) {
-        event.preventDefault();
-        // Save the data in a variable for sending to the database.
-        var savedMenuItem = {
-            "courseName": menuItem,
-            "courseMain": mainCourse,
-            "courseMainQty": mainQty,
-            "courseMainUnits": mainUnits,
-            "courseSideOne": sideOne,
-            "courseSideOneQty": sideOneQty,
-            "courseSideOneUnits": sideOneUnits,
-            "courseSideTwo": sideTwo,
-            "courseSideTwoQty": sideTwoQty,
-            "courseSideTwoUnits": sideTwoUnits,
-            "courseTotalCalories": totalCalories
-        };
-        // End of var menuItemSaved.
-        
-        // Upload menu item to the database
-        database.ref().push(savedMenuItem);
-    }); // End of .on(click).
-
 }); // End of document ready.
 
-//  STUFF THAT DID NOT WORK
-
-//    let arr = Object.entries(snapshot).map(e => Object.assign(e[1], { key: e[0] }));
-//    console.log(arr);
-
-// function snapshotToArray(snapshot) {
-//     var returnArr = [];
-//     snapshot.forEach(function(childSnapshot) {
-//         var item = childSnapshot.val();
-//         item.key = childSnapshot.key;
-//         console.log(childSnapshot.val());
-//         console.log(returnArr);
-//     });
-
-
+// TO GET THE DATA KEY
 //    snapshot.forEach(function(data) {
 //        console.log(data.key);
 //        var pushKey = data.key;
 //        console.log(savedShot.name);
-
-
-            // dbmainQty = 
-            // dbsideOneQty = snapshot.savedIngredient.quantity;
-            // dbsideTwoQty = snapshot.savedIngredient.units;
-            // dbmainUnits = snapshot.savedIngredient.calories;
-            // dbsideOneUnits = snapshot.savedIngredient.;
-            // dbsideTwoUnits = snapshot.savedIngredient.;
-            // dbmainCalories = snapshot.savedIngredient.;
-            // dbsideOneCalories = snapshot.savedIngredient.;
-            // dbsideTwoCalories = snapshot.savedIngredient.;
