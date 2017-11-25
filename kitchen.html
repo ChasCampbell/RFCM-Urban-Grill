@@ -10,18 +10,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>-->
 </head>
-<!--______________________GET INFORMATION ON AN INGREDIENT___________________________-->
 
 <body>
+    <!--______________________GET INFORMATION ON AN INGREDIENT___________________________-->
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">Ingredient Evaluation</h1>
-                    </div>
                     <div class="panel-body">
-                        <h3>Enter an Ingredient</h3>
+                        <div>
+                            <h3>Enter an Ingredient</h3>
+                        </div>
                         <form>
                             <div class="form-group">
                                 <label for="requestIn" id="requestLine">Ingredient Name</label>
@@ -31,95 +30,12 @@
                         </form>
                     </div>
                     <!--End of panel body.-->
-                    <!--_________________________________________CREATE A PLATE_____________-->
-                    <div class="panel-body">
-                        <h3>Create a Plate!</h3>
-                        <h6>Enter information to complete a menu item.</h6>
-                        <form>
-                            <div class="form-group">
-                                <label for="itemIn" id="itemLine">Menu Item</label>
-                                <input type="text" class="form-control" id="itemIn">
-                            </div>
-                            <div class="form-group">
-                                <label for="mainIn" id="mainLine">Main Course</label>
-                                <input type="text" class="form-control" id="mainIn">
-                                <p class="ilb">Base - Quantity: <span class="quc" id="setmbq"></span></p>
-                                <p class="ilb">Units: <span class="quc" id="setmbu"></span></p>
-                                <p class="ilb">Calories: <span class="quc" id="setmbc"></span></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="sideOneIn" id="sideOneLine">Side One</label>
-                                <input type="text" class="form-control" id="sideOneIn">
-                                <p class="ilb">Base - Quantity: <span class="quc" id="sets1bq"></span></p>
-                                <p class="ilb">Units: <span class="quc" id="sets1bu"></span></p>
-                                <p class="ilb">Calories: <span class="quc" id="sets1bc"></span></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="sideTwoIn" id="sideTwoLine">Side Two</label>
-                                <input type="text" class="form-control" id="sideTwoIn">
-                                <p class="ilb">Base - Quantity: <span class="quc" id="sets2bq"></span></p>
-                                <p class="ilb">Units: <span class="quc" id="sets2bu"></span></p>
-                                <p class="ilb">Calories: <span class="quc" id="sets2bc"></span></p>
-                            </div>
-                            <div>
-                                <p class="total">Total Base Calories: </p>
-                                <p id="setBaseCal"></p>
-                            </div>
-                            <div>
-                                <p class="ilb1">Click Preview to see the base quantities, units, and calories.</p>
-                                <button type="submit" class="btn btn-default" id="previewButton">Preview</button>
-                                <p class="ilb1">Enter the planned quantities - remember to use the same units as above.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="mainQtyIn" id="mainQtyLine">Main Course - Serving Quantity: </label>
-                                <input type="text" class="form-control" id="mainQtyIn">
-                                <p class="servcal">Calories: <span id="mainServCal"></span></p>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="qtyOneIn" id="qtyOneLine">Side One - Serving Quantity: </label>
-                                <input type="text" class="form-control" id="qtyOneIn">
-                                <p class="servcal">Calories: <span id="s1ServCal"></span></p>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="qtyTwoIn" id="qtyTwoLine">Side Two - Serving Quantity: </label>
-                                <input type="text" class="form-control" id="qtyTwoIn">
-                                <p class="servcal">Calories: <span id="s2ServCal"></span></p>
-                            </div>
-
-                            <div>
-                                <p class="totalc">Total Calories: </p>
-                            </div>
-                            <div id="bottomButtons">
-                                <div>
-                                    <button type="submit" class="btn btn-default" id="checkitButton">CheckIt</button>
-                                    <p class="ilb2">Click on the CheckIt button to see the resulting calories.</p>
-                                </div>
-                                <div>
-                                    <button type="submit" class="btn btn-default" id="saveButton2">SaveIt</button>
-                                    <p class="ilb3">Click on the SaveIt button to save the menu item.</p>
-                                </div>
-                                <div>
-                                    <button type="submit" class="btn btn-default" id="clearButton2">ClearIt</button>
-                                    <p class="ilb4">Click on the ClearIt button to clear the entire entry.</p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!--End of panel-body.-->
                 </div>
                 <!--End of panel.-->
-            </div>
-            <!--End of column on left.-->
-            <!--___________________________________LOAD INGREDIENT RESULTS__________________-->
-            <div class="col-md-6">
+                <!--___________________________________LOAD INGREDIENT RESULTS__________________-->
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h1 class="panel-title">Ingredient Information</h1>
-                    </div>
                     <div class="panel-body">
+                        <h3>Ingredient Information</h3>
                         <table class="table table-hover" id='info-table'>
                             <thead>
                                 <tr>
@@ -133,40 +49,41 @@
                                 <!--Content from jQuery will be inserted here.-->
                             </tbody>
                         </table>
+                        <div>
+                            <button type="submit" class="btn btn-default" id="clearButton">Clear</button>
+                        </div>
                     </div>
                     <!--End of panel body.-->
-
+                    <!--________________________________________SAVE AN INGREDIENT____________________-->
+                    <div class="panel-body">
+                        <h3>Save an Ingredient</h3>
+                        <h6>Enter information from the table above (no capital letters).</h6>
+                        <form>
+                            <div class="form-group">
+                                <label for="ingredientIn" id="ingredientLine">Ingredient Name</label>
+                                <input type="text" class="form-control" id="ingredientIn">
+                            </div>
+                            <div class="form-group">
+                                <label for="qtyIn" id="qtyLine">Quantity</label>
+                                <input type="text" class="form-control" id="qtyIn">
+                            </div>
+                            <div class="form-group">
+                                <label for="unitsIn" id="unitsLine">Units</label>
+                                <input type="text" class="form-control" id="unitsIn">
+                            </div>
+                            <div class="form-group">
+                                <label for="caloriesIn" id="caloriesLine">Calories</label>
+                                <input type="text" class="form-control" id="caloriesIn">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="saveButton">Save</button>
+                        </form>
+                    </div>
+                    <!--End of panel-body.-->
                 </div>
-                <!--End of panel.-->
-
-                <div>
-                    <button type="submit" class="btn btn-default" id="clearButton">Clear</button>
-                </div>
-                <!--________________________________________SAVE AN INGREDIENT____________________-->
-                <div class="panel-body">
-                    <h3>Save an Ingredient</h3>
-                    <h6>Enter information from the table above (no capital letters).</h6>
-                    <form>
-                        <div class="form-group">
-                            <label for="ingredientIn" id="ingredientLine">Ingredient Name</label>
-                            <input type="text" class="form-control" id="ingredientIn">
-                        </div>
-                        <div class="form-group">
-                            <label for="qtyIn" id="qtyLine">Quantity</label>
-                            <input type="text" class="form-control" id="qtyIn">
-                        </div>
-                        <div class="form-group">
-                            <label for="unitsIn" id="unitsLine">Units</label>
-                            <input type="text" class="form-control" id="unitsIn">
-                        </div>
-                        <div class="form-group">
-                            <label for="caloriesIn" id="caloriesLine">Calories</label>
-                            <input type="text" class="form-control" id="caloriesIn">
-                        </div>
-                        <button type="submit" class="btn btn-default" id="saveButton">Save</button>
-                    </form>
-                </div>
-                <!--End of panel-body.-->
+                <!--</div> End of panel.-->
+            </div>
+            <!--End of column on left.-->
+            <div class="col-md-6">
                 <!--___________________________________________LOOKUP_______________________________-->
                 <div class="panel-body">
                     <h3>Look Up an Ingredient or Menu Item</h3>
@@ -178,7 +95,7 @@
                         <div>
                             <button type="submit" class="btn btn-default" id="lookupButtonOne">Lookup</button>
                         </div>
-                        <div>
+                        <div id="ingredientOutput">
                             <p id="lIQ">Ingredient - Quantity: <span id="insertlIQ"></span></p>
                             <p id="lIU">Units: <span id="insertlIU"></span></p>
                             <p id="lIC">Calories: <span id="insertlIC"></span></p>
@@ -203,22 +120,102 @@
                     </form>
                 </div>
                 <!--End of panel-body.-->
-            </div>
-            <!--End of column on right.-->
-        </div>
-        <!--End of row.-->
+                <!--_________________________________________CREATE A PLATE_____________-->
+                <div class="panel-body">
+                    <h3>Create a Plate!</h3>
+                    <h6>Enter information to complete a menu item.</h6>
+                    <form>
+                        <div class="form-group">
+                            <label for="itemIn" id="itemLine">Menu Item</label>
+                            <input type="text" class="form-control" id="itemIn">
+                        </div>
+                        <div class="form-group">
+                            <label for="mainIn" id="mainLine">Main Course</label>
+                            <input type="text" class="form-control" id="mainIn">
+                            <p class="ilb">Base - Quantity: <span class="quc" id="setmbq"></span></p>
+                            <p class="ilb">Units: <span class="quc" id="setmbu"></span></p>
+                            <p class="ilb">Calories: <span class="quc" id="setmbc"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="sideOneIn" id="sideOneLine">Side One</label>
+                            <input type="text" class="form-control" id="sideOneIn">
+                            <p class="ilb">Base - Quantity: <span class="quc" id="sets1bq"></span></p>
+                            <p class="ilb">Units: <span class="quc" id="sets1bu"></span></p>
+                            <p class="ilb">Calories: <span class="quc" id="sets1bc"></span></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="sideTwoIn" id="sideTwoLine">Side Two</label>
+                            <input type="text" class="form-control" id="sideTwoIn">
+                            <p class="ilb">Base - Quantity: <span class="quc" id="sets2bq"></span></p>
+                            <p class="ilb">Units: <span class="quc" id="sets2bu"></span></p>
+                            <p class="ilb">Calories: <span class="quc" id="sets2bc"></span></p>
+                        </div>
+                        <div>
+                            <p class="total">Total Base Calories: </p>
+                            <p id="setBaseCal"></p>
+                        </div>
+                        <div>
+                            <p class="ilb1">Click Preview to see the base quantities, units, and calories.</p>
+                            <button type="submit" class="btn btn-default" id="previewButton">Preview</button>
+                            <p class="ilb1">Enter the planned quantities - remember to use the same units as above.</p>
+                        </div>
 
-        <div class="row" id="foot">
-            <div class="col-md-12">
-                <div class="foot">
-                    <img src="assets/images/attribution_jqfdgy.png" alt="Nutritionix Logo and Link">
-                    <p>Nutrition data from Nutritionix.com</p>
+                        <div class="form-group">
+                            <label for="mainQtyIn" id="mainQtyLine">Main Course - Serving Quantity: </label>
+                            <input type="text" class="form-control" id="mainQtyIn">
+                            <p class="servcal">Calories: <span id="mainServCal"></span></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="qtyOneIn" id="qtyOneLine">Side One - Serving Quantity: </label>
+                            <input type="text" class="form-control" id="qtyOneIn">
+                            <p class="servcal">Calories: <span id="s1ServCal"></span></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="qtyTwoIn" id="qtyTwoLine">Side Two - Serving Quantity: </label>
+                            <input type="text" class="form-control" id="qtyTwoIn">
+                            <p class="servcal">Calories: <span id="s2ServCal"></span></p>
+                        </div>
+
+                        <div>
+                            <p class="totalc">Total Calories: </p>
+                        </div>
+                        <div id="bottomButtons">
+                            <div>
+                                <button type="submit" class="btn btn-default" id="checkitButton">CheckIt</button>
+                                <p class="ilb2">Click on the CheckIt button to see the resulting calories.</p>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default" id="saveButton2">SaveIt</button>
+                                <p class="ilb3">Click on the SaveIt button to save the menu item.</p>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-default" id="clearButton2">ClearIt</button>
+                                <p class="ilb4">Click on the ClearIt button to clear the entire entry.</p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <!--End of footer.-->
+                <!--End of panel-body.-->
             </div>
-            <!--End of column.-->
+            <!--End of panel.-->
         </div>
-        <!--End of row.-->
+        <!--End of column on right.-->
+    </div>
+    <!--End of row.-->
+
+    <div class="row" id="foot">
+        <div class="col-md-12">
+            <div class="foot">
+                <img src="assets/images/attribution_jqfdgy.png" alt="Nutritionix Logo and Link">
+                <p>Nutrition data from Nutritionix.com</p>
+            </div>
+            <!--End of footer.-->
+        </div>
+        <!--End of column.-->
+    </div>
+    <!--End of row.-->
 
     </div>
     <!--End of container.-->

@@ -1,19 +1,17 @@
-/*Style for ingredient lookup.*/
-
 .panel {
     border: none;
 }
 
-.panel-heading {
+h3 {
     background-color: #337ab7;
-    margin-top: 50px;
-    text-align: center;
+    color: white;
+    font-size: 24px;
+    border: solid;
+    border-width: 5px;
+    border-color: #337ab7;
 }
 
-.panel-title {
-    font-size: 36px;
-    color: white;
-}
+/*Style for Enter an Ingredient*/
 
 #requestIn {
     max-width: 300px;
@@ -64,6 +62,16 @@ h6 {
 
 /*Style for lookup from database.*/
 
+#ingredientLookup {
+    max-width: 300px;
+}
+
+#lookupButtonOne {
+    clear: left;
+    float: left;
+    margin-right: 15px;
+}
+
 #lIQ {
     display: inline-block;
     font-size: 14px;
@@ -92,10 +100,6 @@ h6 {
     display: inline-block;
     font-size: 14px;
     font-weight: bold;
-}
-
-#ingredientLookup {
-    max-width: 300px;
 }
 
 #menuLookup {
@@ -146,12 +150,10 @@ h6 {
 }
 
 #lookupButton2 {
-    float: left;
     margin-right: 15px;
 }
 
 #clearButton3 {
-    display: inline-block;
     margin-top: 15px;
 }
 
