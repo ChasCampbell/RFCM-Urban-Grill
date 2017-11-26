@@ -115,8 +115,10 @@ $(document).ready(function() {
                     servingSizeQty = results.hits[i].fields.nf_serving_size_qty;
                     servingSizeUnits = results.hits[i].fields.nf_serving_size_unit;
                     // Put the results into the html.
-                    $("#info-table > tbody").append("<tr><td>" + itemName + "</td><td>" + brandName + "</td><td>" +
-                        itemCalories + "</td><td>" + servingSizeQty + ' ' + servingSizeUnits + "</td></tr>");
+                    $("#info-table > tbody").append("<tr><td>" + itemName +
+                        "</td><td>" + brandName + "</td><td>" +
+                        itemCalories + "</td><td>" + servingSizeQty + ' ' +
+                        servingSizeUnits + "</td></tr>");
                 } // End of for.
             }); // End of .done.
 

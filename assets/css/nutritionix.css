@@ -3,12 +3,12 @@
 }
 
 h3 {
-    background-color: #337ab7;
+    background-color: green;
     color: white;
     font-size: 24px;
     border: solid;
     border-width: 5px;
-    border-color: #337ab7;
+    border-color: green;
 }
 
 /*Style for Enter an Ingredient*/
