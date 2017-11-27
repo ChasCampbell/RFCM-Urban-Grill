@@ -81,9 +81,9 @@
         <div class="bg-faded p-4 my-4">
             <div class="events-table">
                 <header id="bonusBoroder">
-                    <h2>BONUS TIME</h2>
+                    <h1>BONUS TIME</h1>
                 </header>
-                <h2>Book any ticket master event and when you show up to Urban Grill with your stub, the first round of drinks is on us.</h2>
+                <h2>Book any ticket master event and when you show up with your stub, the first round of drinks is on us.</h2>
                 <h3>To sweeten the deal even
                     <bold>more</bold>, you will also get an additional 10% off being awesome.</h3>
 
@@ -132,12 +132,10 @@
                         for (i = 0; i < evts.length; i++) {
                             console.log(evts[i])
                             // the following three varialbes are the fields inside the events object I wanted .name .url and .images.
-                            var eventDate = evts[i].dates.start.localDate;
                             var eventName = evts[i].name;
                             var eventUrl = evts[i].url;
                             var eventImg = evts[i].images;
                             console.log("eventImg URL", eventImg);
-                            console.log("eventDate ", eventDate);
                             // this for loop was created to go inside of the images array which listed 10 objects that all had images
                             // Note, I had to use the variable j to replace i because i was already used.  Each time we do a new for loop, a new variable must be used.
                             for (j = 0; j < eventImg.length; j++) {
@@ -151,8 +149,8 @@
                                 }
                             }
                             //This is a long ass string.  The challenge here was knowing where to put "" '' "''" and so on
-                            $(".events-table").append("<div class='divClass'>" + "<div class='divClass2'><ul><h2>" + eventName + "<br>" + eventDate + "</h2></div><div clas= 'divClass'><p>" +
-                                "<a href = '" + eventUrl + "'  target='_blank' >" + "<img class='image-size' src = " + imgURL + " ></a></ul></div></div>");
+                            $(".events-table").append("<div class='divClass'><ul><h2>" + eventName + "</h2><p><br>" +
+                                "<a href = '" + eventUrl + "'  target='_blank' >" + "<img class='image-size' src = " + imgURL + " >" + "</a></ul></div>");
                         }
                     },
                     error: function(xhr, status, err) {
