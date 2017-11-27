@@ -1,0 +1,371 @@
+.panel {
+    border: none;
+}
+
+h3 {
+    background-color: green;
+    color: white;
+    font-size: 24px;
+    border: solid;
+    border-width: 5px;
+    border-color: green;
+}
+
+/*Style for Enter an Ingredient*/
+
+#requestIn {
+    max-width: 300px;
+}
+
+/*Style for save an ingredient*/
+
+h6 {
+    font-size: 14px;
+}
+
+#ingredientIn {
+    max-width: 300px;
+}
+
+#qtyLine {
+    float: left;
+    margin-right: 5px;
+    padding-top: 10px;
+
+}
+
+#qtyIn {
+    max-width: 80px;
+    float: left;
+}
+
+#unitsLine {
+    float: left;
+    margin-right: 5px;
+    margin-left: 18px;
+    padding-top: 10px;
+}
+
+#unitsIn {
+    max-width: 100px;
+}
+
+#caloriesLine {
+    float: left;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#caloriesIn {
+    max-width: 80px;
+}
+
+/*Style for lookup from database.*/
+
+#ingredientLookup {
+    max-width: 300px;
+}
+
+#lookupButtonOne {
+    clear: left;
+    float: left;
+    margin-right: 15px;
+}
+
+#lIQ {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lIU {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lIC {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lMC {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#menuLookup {
+    max-width: 300px;
+}
+
+#menuLookupLine {
+    clear: left;
+}
+
+.menu {
+    clear: left;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.dish {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishq {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishu {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.dishc {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+#lookupButton2 {
+    margin-right: 15px;
+}
+
+#clearButton3 {
+    margin-top: 15px;
+}
+
+/*Style for create a plate*/
+
+#itemIn {
+    max-width: 300px;
+}
+
+#mainIn {
+    max-width: 300px;
+}
+
+#sideOneLine {
+    clear: left;
+    float: left;
+}
+
+#sideOneIn {
+    max-width: 300px;
+    clear: both;
+}
+
+#sideTwoLine {
+    clear: left;
+}
+
+#sideTwoIn {
+    clear: both;
+    max-width: 300px;
+}
+
+.ilb {
+    clear: left;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.quc {
+    clear: left;
+    display: inline-block;
+}
+
+/*Put in the serving quantities.*/
+
+#mainQtyLine {
+    float: left;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#mainQtyIn {
+    float: left;
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+#qtyOneLine {
+    clear: left;
+    float: left;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#qtyOneIn {
+    float: left;
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+#qtyTwoLine {
+    float: left;
+    clear: left;
+    text-align: center;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#qtyTwoIn {
+    float: left;
+    width: 50px;
+    height: 25px;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+/*Show the serving calculated calories.*/
+
+.servcal {
+    float: left;
+    max-width: 150px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 5px;
+}
+
+#insertmsc {
+    display: inline-block;
+}
+
+#inserts1sc {
+    display: inline-block;
+}
+
+#inserts2sc {
+    display: inline-block;
+}
+
+.total {
+    clear: left;
+    display: inline-block;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#setBaseCal {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 6px;
+}
+
+#previewButton {
+    clear: left;
+    float: left;
+}
+
+.ilb1 {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.totalc {
+    clear: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.totalc {
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#bottomButtons {
+    clear: left;
+    float: left;
+}
+
+.ilb2 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ilb3 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.ilb4 {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 18px;
+}
+
+#checkitButton {
+    display: inline-block;
+    width: 75px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+#saveButton2 {
+    clear: left;
+    float: left;
+    width: 75px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+#clearButton2 {
+    clear: left;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 75px;
+}
+
+.foot {
+    color: white;
+    text-align: center;
+}
