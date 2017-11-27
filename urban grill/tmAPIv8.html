@@ -83,11 +83,12 @@
                 <header id="bonusBoroder">
                     <h2>BONUS TIME</h2>
                 </header>
-                <h2>Book any ticket master event and when you show up to Urban Grill with your stub, the first round of drinks is on us.</h2>
-                <h3>To sweeten the deal even
-                    <bold>more</bold>, you will also get an additional 10% off being awesome.</h3>
+                <div id="textText">
+                    <h2>Book any ticket master event and when you show up with your TicketMaster event stub, the first round of drinks is on us.</h2>
+                    <h3>Just click on the image to start planning your amazing night. To sweeten the deal even
+                        <bold>more</bold>, you will also get an additional 10% off being awesome.</h3>
 
-
+                </div>
             </div>
         </div>
     </div>
@@ -137,7 +138,7 @@
                             var eventUrl = evts[i].url;
                             var eventImg = evts[i].images;
                             console.log("eventImg URL", eventImg);
-                            console.log("eventDate ", eventDate);
+
                             // this for loop was created to go inside of the images array which listed 10 objects that all had images
                             // Note, I had to use the variable j to replace i because i was already used.  Each time we do a new for loop, a new variable must be used.
                             for (j = 0; j < eventImg.length; j++) {
