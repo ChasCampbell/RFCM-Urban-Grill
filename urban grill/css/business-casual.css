@@ -276,11 +276,70 @@ body::-webkit-scrollbar-thumb {
   text-decoration: underline;
 }
 
+
+/*Rodney code for bonus page*/
+
+.events-table {
+
+  background: #ffffffe8;
+  /*background: #000000f2;*/
+  color: #172a40;
+  text-align: center;
+  /*width: 85%;*/
+  margin: auto;
+  padding: 10px;
+  border: 3px solid #806c00;
+}
+
+#textText {
+  text-align: justify;
+  max-width: 640px;
+  margin: auto;
+}
+
+.image-size {
+
+  width: 50%;
+  height: auto;
+  border: 3px solid #806c00;
+  box-shadow: 0px 3px 25px 3px #888888;
+}
+
+.divClass {
+  /*background: #ffffffab;*/
+  /*background: #000000f2;*/
+  color: #172a40;
+  text-align: center;
+  border: 3px solid #806c00;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: 0px 3px 25px 3px #888888;
+}
+
+.divClass2 {
+  /*background: #ffffffab;*/
+  /*background: #000000f2;*/
+  color: #172a40;
+  text-align: center;
+  /*border: 3px solid #806c00;*/
+  margin: 20px;
+  /*padding: 30px;*/
+  /*box-shadow: 0px 3px 25px 3px #888888;*/
+}
+
+#bonusBoroder {
+  border: 3px solid #806c00;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: 0px 3px 25px 3px #888888;
+  text-align: center;
+}
+
+
+
+/*MEDIA QUERIES*/
+
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-
-
-
 
   body::-webkit-scrollbar {
     width: 100%;
@@ -498,283 +557,222 @@ body::-webkit-scrollbar-thumb {
   #calories {
     width: 100%;
   }
+}
 
 
 
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
-
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-
-    /*class (.)*/
-    body::-webkit-scrollbar {
-      width: 100%;
-    }
-
-    body::-webkit-scrollbar-thumb {
-      width: 100%;
-    }
-
-    body {
-      width: 100%;
-    }
-
-    .wrapper {
-      width: 100%;
-    }
-    .row {
-      width: 100%;
-    }
-    .col-md-2 {
-      width: 100%;
-    }
-    .col-md-4 {
-      width: 100%;
-    }
-    .col-md-8 {
-      width: 100%;
-    }
-    .col-lg-6 {
-      width: 100%;
-    }
-    .col-md-12 {
-      width: 100%;
-    }
-    .tagline-upper text-center text-heading text-shadow text-green mt-5 d-none d-lg-block {
-      width: 100%;
-    }
-    .tagline-lower text-center text-expanded text-shadow text-uppercase text-green mb-5 d-none d-lg-block {
-      width: 100%;
-    }
-    .navbar navbar-expand {
-      width: 100%;
-    }
-    .navbar-toggler {
-      width: 100%;
-    }
-    .navbar-toggler-icon {
-      width: 100%;
-    }
-    .collapse navbar-collapse {
-      width: 100%;
-    }
-    .navbar-nav mx-auto {
-      width: 100%;
-    }
-    .nav-item active px-lg-4 {
-      width: 100%;
-    }
-    .nav-link text-uppercase text-expanded {
-      width: 100%;
-    }
-    .container {
-      width: 100%;
-    }
-    .bg-faded p-4 my-4 {
-      width: 100%;
-    }
-    .divider {
-      width: 100%;
-    }
-    .text-center text-lg text-uppercase my-0 {
-      width: 100%;
-    }
-    .picture {
-      width: 100%;
-    }
-    .map {
-      width: 100%;
-    }
-    .mb-0 {
-      width: 100%;
-    }
-    .form-group col-lg-3 {
-      width: 100%;
-    }
-    .text-heading {
-      width: 100%;
-    }
-    .form-group col-lg-12 {
-      width: 100%;
-    }
-    .form-control {
-      width: 100%;
-    }
-
-    .carousel-indicators {
-      width: 100%;
-    }
-
-    .carousel-inner {
-      width: 100%;
-    }
-
-    .carousel-item active {
-      width: 100%;
-    }
-
-    .d-block img-fluid w-100 {
-      width: 100%;
-    }
-
-    .carousel-caption d-none d-md-block {
-      width: 100%;
-    }
-
-    .text-shadow {
-      width: 100%;
-    }
-
-
-    .carousel-item {
-      width: 100%;
-    }
-
-    .carousel-control-prev {
-      width: 100px;
-    }
-
-    .carousel-control-prev-icon {
-      width: 100%;
-    }
-
-    .carousel-control-next {
-      width: 100%;
-    }
-
-    .carousel-control-next-icon {
-      width: 100%;
-    }
-
-    .sr-only {
-      width: 100%;
-    }
-
-    .dinner {
-      width: 100%;
-    }
-
-
-    /*id (#)*/
-    #entree {
-      width: 100%;
-    }
-
-    #calories {
-      width: 100%;
-    }
-
-    #carouselExampleIndicators {
-      width: 100%;
-    }
-
-    #logostyle {
-      width: 100%;
-    }
-
-    #navbackgroundstyle {
-      width: 100%;
-    }
-    #navbarResponsive {
-      width: 100%;
-    }
-    #textstyle {
-      width: 100%;
-    }
-    #ContainerStyleContact {
-      width: 100%;
-    }
-    #infoboxstyle {
-      width: 100%;
-    }
-    #contactboxstyle {
-      width: 100%;
-    }
-    #res {
-      width: 100%;
-    }
-    #bookRes {
-      width: 100%;
-    }
-    #ip1 {
-      width: 100%;
-    }
-    #ip2 {
-      width: 100%;
-    }
-    #ip3 {
-      width: 100%;
-    }
-    #ip4 {
-      width: 100%;
-    }
-    #ip5 {
-      width: 100%;
-    }
-    #ip6 {
-      width: 100%;
-    }
-    #btnsubmit {
-      width: 100%;
-    }
-
+  /*class (.)*/
+  body::-webkit-scrollbar {
+    width: 100%;
   }
 
-  /*Rodney code for bonus page*/
-  .events-table {
-
-    background: #ffffffe8;
-    /*background: #000000f2;*/
-    color: #172a40;
-    text-align: center,
-    /*width: 85%;*/
-    margin: auto;
-    padding: 10px;
-    /*border: 3px solid #806c00;*/
-    /*font-family: Arial, Helvetica, sans-serif;*/
+  body::-webkit-scrollbar-thumb {
+    width: 100%;
   }
 
-  #textText {
-    text-align: justify;
-    max-width: 640px;
-    margin: auto;
+  body {
+    width: 100%;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+  .row {
+    width: 100%;
+  }
+  .col-md-2 {
+    width: 100%;
+  }
+  .col-md-4 {
+    width: 100%;
+  }
+  .col-md-8 {
+    width: 100%;
+  }
+  .col-lg-6 {
+    width: 100%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .tagline-upper text-center text-heading text-shadow text-green mt-5 d-none d-lg-block {
+    width: 100%;
+  }
+  .tagline-lower text-center text-expanded text-shadow text-uppercase text-green mb-5 d-none d-lg-block {
+    width: 100%;
+  }
+  .navbar navbar-expand {
+    width: 100%;
+  }
+  .navbar-toggler {
+    width: 100%;
+  }
+  .navbar-toggler-icon {
+    width: 100%;
+  }
+  .collapse navbar-collapse {
+    width: 100%;
+  }
+  .navbar-nav mx-auto {
+    width: 100%;
+  }
+  .nav-item active px-lg-4 {
+    width: 100%;
+  }
+  .nav-link text-uppercase text-expanded {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  .bg-faded p-4 my-4 {
+    width: 100%;
+  }
+  .divider {
+    width: 100%;
+  }
+  .text-center text-lg text-uppercase my-0 {
+    width: 100%;
+  }
+  .picture {
+    width: 100%;
+  }
+  .map {
+    width: 100%;
+  }
+  .mb-0 {
+    width: 100%;
+  }
+  .form-group col-lg-3 {
+    width: 100%;
+  }
+  .text-heading {
+    width: 100%;
+  }
+  .form-group col-lg-12 {
+    width: 100%;
+  }
+  .form-control {
+    width: 100%;
+  }
+
+  .carousel-indicators {
+    width: 100%;
+  }
+
+  .carousel-inner {
+    width: 100%;
+  }
+
+  .carousel-item active {
+    width: 100%;
+  }
+
+  .d-block img-fluid w-100 {
+    width: 100%;
+  }
+
+  .carousel-caption d-none d-md-block {
+    width: 100%;
+  }
+
+  .text-shadow {
+    width: 100%;
   }
 
 
-
-  .image-size {
-
-    width: 50%;
-    height: auto;
-    border: 3px solid #806c00;
-    box-shadow: 0px 3px 25px 3px #888888;
+  .carousel-item {
+    width: 100%;
   }
 
-  .divClass {
-    /*background: #ffffffab;*/
-    /*background: #000000f2;*/
-    color: #172a40;
-    text-align: center;
-    border: 3px solid #806c00;
-    margin: 20px;
-    padding: 30px;
-    box-shadow: 0px 3px 25px 3px #888888;
+  .carousel-control-prev {
+    width: 100px;
   }
 
-  .divClass2 {
-    /*background: #ffffffab;*/
-    /*background: #000000f2;*/
-    color: #172a40;
-    text-align: center;
-    /*border: 3px solid #806c00;*/
-    margin: 20px;
-    /*padding: 30px;*/
-    /*box-shadow: 0px 3px 25px 3px #888888;*/
+  .carousel-control-prev-icon {
+    width: 100%;
   }
 
-  #bonusBoroder {
-    border: 3px solid #806c00;
-    margin: 20px;
-    padding: 30px;
-    box-shadow: 0px 3px 25px 3px #888888;
-    text-align: center;
+  .carousel-control-next {
+    width: 100%;
   }
+
+  .carousel-control-next-icon {
+    width: 100%;
+  }
+
+  .sr-only {
+    width: 100%;
+  }
+
+  .dinner {
+    width: 100%;
+  }
+
+
+  /*id (#)*/
+  #entree {
+    width: 100%;
+  }
+
+  #calories {
+    width: 100%;
+  }
+
+  #carouselExampleIndicators {
+    width: 100%;
+  }
+
+  #logostyle {
+    width: 100%;
+  }
+
+  #navbackgroundstyle {
+    width: 100%;
+  }
+  #navbarResponsive {
+    width: 100%;
+  }
+  #textstyle {
+    width: 100%;
+  }
+  #ContainerStyleContact {
+    width: 100%;
+  }
+  #infoboxstyle {
+    width: 100%;
+  }
+  #contactboxstyle {
+    width: 100%;
+  }
+  #res {
+    width: 100%;
+  }
+  #bookRes {
+    width: 100%;
+  }
+  #ip1 {
+    width: 100%;
+  }
+  #ip2 {
+    width: 100%;
+  }
+  #ip3 {
+    width: 100%;
+  }
+  #ip4 {
+    width: 100%;
+  }
+  #ip5 {
+    width: 100%;
+  }
+  #ip6 {
+    width: 100%;
+  }
+  #btnsubmit {
+    width: 100%;
+  }
+
+}
