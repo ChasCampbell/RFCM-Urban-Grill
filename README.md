@@ -1,5 +1,6 @@
 # RFCM-Urban-Grill
 Project 1
+
 For the first project of the Bootcamp, we presented a project that could be used to demonstrate to a local business just what we could do for them.
 
 In this case, we chose to provide a site that would help a restaurant in uptown Charlotte attract customers by providing information on events in the area, along with a link to Ticketmaster. The idea being - get tickets and come here before or after the event, or both! We also provide information on the calory content of our menu items - another way to differentiate from other restaurants.
